@@ -1,0 +1,206 @@
+/*
+* Custom Styles
+*/
+@import "normalize";
+@import "spacing";
+@import "varaible";
+@import "@material/button/mdc-button";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/card/mdc-card";
+@import "@material/form-field/mdc-form-field";
+@import "@material/radio/mdc-radio";
+@import "@material/textfield/mdc-text-field";
+@import "@material/dialog/mdc-dialog";
+@import "@material/menu-surface/mdc-menu-surface";
+@import "@material/list/mdc-list";
+@import "@material/menu/mdc-menu";
+
+body {
+    font-family: sans-serif;
+    color: #4d4d4e;
+}
+header {
+    border-bottom: 1px solid #cbcbcb;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    @media (min-width: 992px) {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    > div {
+        display: flex;
+        flex: 1 1 33.3333%;
+        max-width: 33.3333%;
+    }
+    &-title {
+        text-align: center;
+        justify-content: center;
+        font-size: 25px;
+    }
+    &-new {
+        justify-content: flex-end;
+    }
+}
+.colorpicker {
+    position: absolute;
+    top: 30px;
+    left: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 30px;
+    min-width: 200px;
+    border: 1px solid;
+    text-align: center;
+    transition: transform 0.25s linear;
+    background-color: white;
+    &:hover {
+        transform: translateX(-100%);
+    }
+    &-show {
+        position: absolute;
+        right: 100%;
+        font-size: 22px;
+        height: 53px;
+        line-height: 53px;
+        border: 1px solid;
+        border-top-left-radius: 53px;
+        border-bottom-left-radius: 53px;
+        padding-left: 35px;
+        padding-right: 24px;
+        background-color: white;
+        i {
+            font-family: "Material Icons";
+            font-style: normal;
+        }
+    }
+    span {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+    label {
+        user-select: none;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 3px;
+        margin-bottom: 0;
+        display: inline-block;
+        &[for="brownInput"] {
+            background-color: var(--brown-color);
+        }
+        &[for="grayInput"] {
+            background-color: var(--gray-color);
+        }
+        &[for="blueInput"] {
+            background-color: var(--blue-color);
+        }
+    }
+    input {
+        appearance: none;
+        &:checked + label::before {
+            content: "\2713";
+            color: white;
+        }
+    }
+}
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #dadada;
+    border-radius: $border-radius;
+    margin-bottom: 13px;
+    padding: 10px 30px;
+    background-color: #f9f9f9;
+    &-title {
+        display: flex;
+        align-items: center;
+        flex: 1 1 40%;
+        max-width: 40%;
+        i {
+            margin-left: 15px;
+            font-size: 33px;
+            color: $color-danger;
+            cursor: pointer;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+    }
+    &-star {
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        span {
+            font-size: 25px;
+            width: 40px;
+            text-align: center;
+        }
+        i {
+            font-size: 35px;
+            color: #efcd49;
+        }
+    }
+    &-point {
+        display: flex;
+        flex: 1 1 40%;
+        max-width: 40%;
+        flex-direction: column;
+        align-items: flex-end;
+
+        i {
+            margin-right: 15px;
+            cursor: pointer;
+            &:first-of-type {
+                width: 0;
+                height: 0;
+                border-left: 13px solid transparent;
+                border-right: 13px solid transparent;
+                border-bottom: 18px solid $color-success;
+                margin-bottom: 3px;
+            }
+            &:last-of-type {
+                width: 0;
+                height: 0;
+                border-left: 13px solid transparent;
+                border-right: 13px solid transparent;
+                border-top: 18px solid $color-danger;
+            }
+        }
+    }
+    &:hover {
+        .card-title i {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}
+main {
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+#alert-dialog-content {
+    text-align: center;
+    i {
+        font-size: 95px;
+    }
+    .success {
+        color: $color-success;
+    }
+    .warning {
+        color: $color-danger;
+    }
+}

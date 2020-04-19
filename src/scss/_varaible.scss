@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+$border-radius: 4px;
+$color-success: #7ed221;;
+$color-danger: #cc2f42;;
+:root {
+    --brown-color: #c39a6b;
+    --gray-color: #c5c5c5;
+    --blue-color: #8ab2c5;
+    --mdc-theme-primary: var(--brown-color);
+}
+
+body {
+    &[data-color="brown"] {
+        --mdc-theme-primary: var(--brown-color);
+    }
+    &[data-color="gray"] {
+        --mdc-theme-primary: var(--gray-color);
+    }
+    &[data-color="blue"] {
+        --mdc-theme-primary: var(--blue-color);
+    }
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Case Study | Apsiyon</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="menu">
+                <div>
+                    <div>
+                        <button class="mdc-button mdc-button--unelevated mr-3">
+                            <span class="mdc-button__ripple" data-menu="dropdownCategory"></span> Türler
+                        </button>
+                        <div class="mdc-menu-surface--anchor">
+                            <div class="mdc-menu mdc-menu-surface" id="dropdownCategory">
+                                <ul class="mdc-list mdc-list--avatar-list" role="radiogroup">
+                                    <li class="mdc-list-item" role="radio" aria-checked="true" tabindex="0">
+                                        <label class="mdc-list-item__text" for="category-list-1">Tümü</label>
+                                        <div class="mdc-radio mdc-list-item__meta">
+                                            <input class="mdc-radio__native-control" type="radio" id="category-list-1" name="category-list-group" value="all" checked>
+                                            <div class="mdc-radio__background">
+                                                <div class="mdc-radio__outer-circle"></div>
+                                                <div class="mdc-radio__inner-circle"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mdc-list-item" role="radio" aria-checked="false">
+                                        <label class="mdc-list-item__text" for="category-list-2">Filmler</label>
+                                        <div class="mdc-radio mdc-list-item__meta">
+                                            <input class="mdc-radio__native-control" type="radio" id="category-list-2" name="category-list-group" value="movie">
+                                            <div class="mdc-radio__background">
+                                                <div class="mdc-radio__outer-circle"></div>
+                                                <div class="mdc-radio__inner-circle"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mdc-list-item" role="radio" aria-checked="false">
+                                        <label class="mdc-list-item__text" for="category-list-3">Diziler</label>
+                                        <div class="mdc-radio mdc-list-item__meta">
+                                            <input class="mdc-radio__native-control" type="radio" id="category-list-3" name="category-list-group" value="series">
+                                            <div class="mdc-radio__background">
+                                                <div class="mdc-radio__outer-circle"></div>
+                                                <div class="mdc-radio__inner-circle"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="mdc-button mdc-button--unelevated">
+                            <span class="mdc-button__ripple" data-menu="dropdownShort"></span> Sırala
+                        </button>
+                        <div class="mdc-menu-surface--anchor">
+                            <div class="mdc-menu mdc-menu-surface" id="dropdownShort">
+                                <ul class="mdc-list">
+                                    <li class="mdc-list-item" data-type="low">
+                                        <span class="mdc-list-item__text">Puana Göre (Artan)</span>
+                                    </li>
+                                    <li class="mdc-list-item" data-type="high">
+                                        <span class="mdc-list-item__text">Puana Göre (Azalan)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-title">Case Study</div>
+                <div class="menu-new">
+                    <button class="mdc-button mdc-button--unelevated">
+                        <span class="mdc-button__ripple" data-dialog="newDialog"></span><i class="material-icons mdc-button__icon">add</i> YENİ EKLE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container" id="movieList"></div>
+        <div class="colorpicker">
+            <div class="colorpicker-show">
+                <i>settings</i>
+            </div>
+            <span>Tema Rengi Seçiniz:</span>
+            <div>
+                <input type="radio" name="colorPicker" value="brown" id="brownInput" checked>
+                <label for="brownInput"></label>
+            </div>
+            <div>
+                <input type="radio" name="colorPicker" value="gray" id="grayInput">
+                <label for="grayInput"></label>
+            </div>
+            <div>
+                <input type="radio" name="colorPicker" value="blue" id="blueInput">
+                <label for="blueInput"></label>
+            </div>
+        </div>
+
+    </main>
+    <div class="mdc-dialog" id="newDialog">
+        <div class="mdc-dialog__container">
+            <div class="mdc-dialog__surface" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title" aria-describedby="my-dialog-content">
+                <div class="mdc-dialog__content" id="my-dialog-content">
+                    <form id="newMovie">
+                        <div class="mb-4">
+                            <div class="mdc-form-field">
+                                <div class="mdc-radio">
+                                    <input class="mdc-radio__native-control" type="radio" name="newCategory" id="newMovieRadio" value="movie">
+                                    <div class="mdc-radio__background">
+                                        <div class="mdc-radio__outer-circle"></div>
+                                        <div class="mdc-radio__inner-circle"></div>
+                                    </div>
+                                    <div class="mdc-radio__ripple"></div>
+                                </div>
+                                <label for="newMovieRadio">Film</label>
+                            </div>
+                            <div class="mdc-form-field">
+                                <div class="mdc-radio">
+                                    <input class="mdc-radio__native-control" type="radio" name="newCategory" value="series" id="newSeriesRadio" checked>
+                                    <div class="mdc-radio__background">
+                                        <div class="mdc-radio__outer-circle"></div>
+                                        <div class="mdc-radio__inner-circle"></div>
+                                    </div>
+                                    <div class="mdc-radio__ripple"></div>
+                                </div>
+                                <label for="newSeriesRadio">Dizi</label>
+                            </div>
+                        </div>
+                        <label class="mdc-text-field mdc-text-field--outlined">
+                            <input type="text" class="mdc-text-field__input" aria-labelledby="newNameLablel" name="name" id="newName" required>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <span class="mdc-floating-label" id="newNameLablel">Film / Dizi Adı</span>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </label>
+                        <label class="mdc-text-field mdc-text-field--outlined" style="width: 150px;">
+                            <input class="mdc-text-field__input" aria-labelledby="newStarLablel" type="number" max="10" min="1" name="point" id="newStar" required>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <span class="mdc-floating-label" id="newStarLablel">Puanı</span>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </label>
+                        <label class="mdc-text-field mdc-text-field--outlined" style="width: 150px;">
+                            <input class="mdc-text-field__input" aria-labelledby="newYearLablel" type="number" max="9999" min="1" name="point" id="newYear" required>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <span class="mdc-floating-label" id="newYearLablel">Yılı</span>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </label>
+                    </form>
+                </div>
+                <footer class="mdc-dialog__actions">
+                    <button form="newMovie" type="submit" class="mdc-button mdc-button--unelevated">
+                        <span class="mdc-button__ripple"></span> KAYDET
+                    </button>
+                </footer>
+            </div>
+        </div>
+        <div class="mdc-dialog__scrim"></div>
+    </div>
+    <div class="mdc-dialog" id="alertDialog">
+        <div class="mdc-dialog__container w-100">
+            <div class="mdc-dialog__surface" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title" aria-describedby="alert-dialog-content">
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

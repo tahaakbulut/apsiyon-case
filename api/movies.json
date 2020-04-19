@@ -1,0 +1,39 @@
+{
+  "movies": [
+    {
+      "title": "Baba",
+      "star": 8,
+      "category": "movie",
+      "year": "1972",
+      "id": 1
+    },
+    {
+      "title": "Breaking Bad",
+      "star": 6,
+      "category": "series",
+      "year": 2008,
+      "id": 7
+    },
+    {
+      "title": "House of Cards",
+      "star": 7,
+      "category": "series",
+      "year": 2013,
+      "id": 8
+    },
+    {
+      "title": "Bizimkiler",
+      "star": 6,
+      "category": "series",
+      "year": 1998,
+      "id": 11
+    },
+    {
+      "title": "Leon",
+      "star": 9,
+      "category": "movie",
+      "year": 1994,
+      "id": 12
+    }
+  ]
+}
